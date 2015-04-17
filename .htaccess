@@ -1,0 +1,4 @@
+# basic htaccess
+
+Options +FollowSymlinks
+RewriteEngine on
