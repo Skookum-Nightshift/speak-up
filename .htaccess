@@ -1,4 +1,25 @@
-# basic htaccess
+<IfModule mod_rewrite.c>
 
-Options +FollowSymlinks
-RewriteEngine on
+	Options +FollowSymlinks
+	RewriteEngine on
+
+	RewriteOptions inherit
+
+	############################################
+	## always send 404 on missing files in these folders
+
+	    RewriteCond %{REQUEST_URI} !^/(css|theme|js)/
+
+	############################################
+	## never rewrite for existing files, directories and links
+
+	    RewriteCond %{REQUEST_FILENAME} !-f
+	    RewriteCond %{REQUEST_FILENAME} !-d
+	    RewriteCond %{REQUEST_FILENAME} !-l
+
+	############################################
+	## rewrite everything else to index.php
+
+	    RewriteRule .* index.php [L]
+
+</IfModule>
