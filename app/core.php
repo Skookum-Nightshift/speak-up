@@ -44,6 +44,8 @@ if ($uri[1] == "") {
 // get special information based on uri
 if ($uri[1] == "vendor") {
 
+}
+
 // include header, page and footer
 
 include($basedir . "/template/header.php");
