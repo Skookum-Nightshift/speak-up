@@ -33,13 +33,16 @@ $pageTitle = ucwords(strtolower($uri[1]));
 $PHPPage = $basedir . "/pages/" . strtolower($uri[1]) . ".php";
 
 // Check to see if a URI exists, if not do something about it.
-if ($REQUEST_URI[1] == "") {
+if ($uri[1] == "") {
 	$PHPPage = $basedir . "/pages/home.php";
 	$pageTitle = "HomePage";
 } elseif(!file_exists($PHPPage)) {
 	$PHPPage = $basedir . "/pages/404.php";;
 	$pageTitle = "404 Error Page";
 }
+
+// get special information based on uri
+if ($uri[1] == "vendor") {
 
 // include header, page and footer
 
