@@ -7,7 +7,7 @@
 
 // Get URI
 $uri = preg_replace("/[^a-zA-Z0-9-\s\/]/", "", urldecode($_SERVER['REQUEST_URI']));
-$uri = explode("/", $REQUEST_URI);
+$uri = explode("/", $uri);
 
 // Check if config exists and install
 if(!file_exists($basedir . "/app/config.php")) {
@@ -37,7 +37,7 @@ if ($uri[1] == "") {
 	$PHPPage = $basedir . "/pages/home.php";
 	$pageTitle = "HomePage";
 } elseif(!file_exists($PHPPage)) {
-	$PHPPage = $basedir . "/pages/404.php";;
+	$PHPPage = $basedir . "/pages/404.php";
 	$pageTitle = "404 Error Page";
 }
 
