@@ -15,10 +15,13 @@ if(!file_exists($basedir . "/app/config.php")) {
 		echo "<h1>Error - install.php missing.</h1>";
 		die();
 	} else {
-		include($basedir . "/app/install.php");
+		require($basedir . "/app/install.php");
 		die();
 	}
 }
+
+// Get config
+require($basedir . "/app/config.php");
 
 // Start MySQL
 $mysql = new mysqli($MySQL_IP, $MySQL_User, $MySQL_Pass, $MySQL_DBName);
