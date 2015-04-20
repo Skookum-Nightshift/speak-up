@@ -43,7 +43,7 @@ if ($uri[1] == "") {
 
 // get special information based on uri
 if ($uri[1] == "vendor") {
-
+	include($basedir . "/app/vendor.php");
 }
 
 // include header, page and footer
