@@ -1,5 +1,6 @@
 <?php
 /*
+	Developer: Joshua Pack
 	Some of this code came from SharkReader.com
 	Permission Granted by owner.
 	Joshua Pack
@@ -44,6 +45,7 @@ if ($uri[1] == "") {
 // get special information based on uri
 if ($uri[1] == "vendor") {
 	include($basedir . "/app/vendor.php");
+	$vendor = new vendor();
 }
 
 // include header, page and footer
