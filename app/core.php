@@ -37,20 +37,24 @@ $PHPPage = $basedir . "/pages/" . strtolower($uri[1]) . ".php";
 if ($uri[1] == "") {
 	$PHPPage = $basedir . "/pages/home.php";
 	$pageTitle = "HomePage";
-} elseif(!file_exists($PHPPage)) {
+} elseif(!file_exists($PHPPage) || $uri[1] == '404') {
+	header("HTTP/1.0 404 Not Found");
 	$PHPPage = $basedir . "/pages/404.php";
 	$pageTitle = "404 Error Page";
 }
 
 // get special information based on uri
 if ($uri[1] == "vendor") {
-	include($basedir . "/app/vendor.php");
+	require($basedir . "/app/vendor.php");
 	$vendor = new vendor();
 }
+require($basedir . "/app/main.php");
+$main = new main();
 
 // include header, page and footer
 
 include($basedir . "/template/header.php");
+include($basedir . "/template/nav.php");
 include($PHPPage);
 include($basedir . "/template/footer.php");
 
