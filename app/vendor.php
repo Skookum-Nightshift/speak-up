@@ -3,7 +3,7 @@
 	Developer: Joshua Pack
 */
 
-class vendor
+class vendor extends main
 {
 	private $mysql;
 	private $vendorCookie;
@@ -11,7 +11,7 @@ class vendor
 
 	public function __construct() 
 	{
-		// make from global MySQL
+		// not sure why i couldn't inherit parent :(
 		$this->mysql = $GLOBALS['mysql'];
 
 		$this->cookieTime = time() + (86400 * 30); // cookieTime defaults to 30 days
@@ -37,9 +37,44 @@ class vendor
 		return true;
 	}
 
-	public function deleteVendorCookie () {
+	public function deleteVendorCookie ()
+	{
 		setcookie('vendorCookie', '', time() - 3600);
 		$this->vendorCookie = '';
 		return true;
+	}
+
+	// limit int default = 3
+	public function getAllVendors ($limit = 3)
+	{
+		$allvendors = $this->mysql->query("SELECT * FROM vendor ORDER BY RAND() LIMIT " . $limit . ";");
+
+		if ($allvendors->num_rows <= 0)
+		{
+			return false;
+		} else {
+			return $allvendors;
+		}
+	}
+
+	// if id is null look at name
+	// id must be int
+	// name must be string
+	public function getVendor ($id, $url)
+	{
+		if (($id === null || $id === '') && is_string($url)) {
+			$theVendor = $this->mysql->query("SELECT * FROM vendor WHERE url = '" . $url . "' LIMIT 1;");
+		} elseif (is_int($id)) {
+			$theVendor = $this->mysql->query("SELECT * FROM vendor WHERE id = '" . $id . "' LIMIT 1;");
+		} else {
+			return false;
+		}
+
+		if ($theVendor->num_rows <= 0)
+		{
+			return false;
+		} else {
+			return $theVendor->fetch_assoc();
+		}
 	}
 }
