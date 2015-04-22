@@ -17,8 +17,8 @@ class vendor extends main
 		$this->cookieTime = time() + (86400 * 30); // cookieTime defaults to 30 days
 
 		// If cookie exists renew it
-		if (isset($_COOKIE['vendor'])) {
-			$this->setVendorCookie($_COOKIE['vendor']);
+		if (isset($_COOKIE['vendorCookie'])) {
+			$this->setVendorCookie($_COOKIE['vendorCookie']);
 		}
 	}
 

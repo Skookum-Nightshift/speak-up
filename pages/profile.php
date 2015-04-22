@@ -13,3 +13,5 @@
 	  <div>
 	<div>
 <?php endif; ?>
+
+<a href="/buy">Buy Now!</a>
