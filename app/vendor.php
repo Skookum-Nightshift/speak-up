@@ -77,4 +77,20 @@ class vendor extends main
 			return $theVendor->fetch_assoc();
 		}
 	}
+
+	public function getPublisher ($id)
+	{
+		if (is_int($id)) {
+			$thePublisher = $this->mysql->query("SELECT * FROM publisher WHERE id = '" . $id . "' LIMIT 1;");
+		} else {
+			return false;
+		}
+
+		if ($thePublisher->num_rows <= 0)
+		{
+			return false;
+		} else {
+			return $thePublisher->fetch_assoc();
+		}
+	}
 }

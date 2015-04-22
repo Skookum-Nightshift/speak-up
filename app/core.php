@@ -46,11 +46,8 @@ if ($uri[1] == "") {
 require($basedir . "/app/main.php");
 $main = new main();
 
-// get special information based on uri
-if ($uri[1] == "vendor" || $uri[1] == "profile") {
-	require($basedir . "/app/vendor.php");
-	$vendor = new vendor();
-}
+require($basedir . "/app/vendor.php");
+$vendor = new vendor();
 
 // include header, page and footer
 
