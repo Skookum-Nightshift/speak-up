@@ -43,6 +43,8 @@ if ($uri[1] == "") {
 	$pageTitle = "404 Error Page";
 }
 
+require($basedir . "/app/password.php");
+
 require($basedir . "/app/main.php");
 $main = new main();
 
