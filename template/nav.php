@@ -8,4 +8,4 @@
   <div id="navAbout">
     <a href="/about">About</a>
   </div>
-<div>
+</div>
