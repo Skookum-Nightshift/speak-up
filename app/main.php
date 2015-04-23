@@ -81,13 +81,14 @@ class main
 		return password_verify($password, $hash);
 	}
 
-	public function getUser ()
+	public function getUser ($email, $password)
 	{
-		
+		return true;
 	}
 
-	public function setUser ()
+	public function setUser ($email, $password)
 	{
-		
+		//INSERT INTO `user` (`email`, `password`) VALUES ('$email', '$password');
+		return true;
 	}
 }
