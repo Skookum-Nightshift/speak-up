@@ -70,4 +70,24 @@ class main
 			return false;
 		}
 	}
+
+	public function passwordEncrypt ($password)
+	{
+		return password_hash($password, PASSWORD_DEFAULT, array("cost" => 10));
+	}
+
+	public function passwordCheck ($password, $hash)
+	{
+		return password_verify($password, $hash);
+	}
+
+	public function getUser ()
+	{
+		
+	}
+
+	public function setUser ()
+	{
+		
+	}
 }
