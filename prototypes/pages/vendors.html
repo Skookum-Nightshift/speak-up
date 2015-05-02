@@ -1,0 +1,21 @@
+<?php $allVendors = $vendor->getAllVendors(3); ?>
+<?php if ($allVendors): ?>
+  <?php while ($vendors = $allVendors->fetch_assoc()): ?>
+  <div id="vendors">
+    <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div id="vendorName">
+          <?php echo $vendors['name']; ?>
+        </div>
+        <!-- Connect link to image -->
+        <div id="vendorLink">
+          <a href="/profile/<?php echo $vendors['url']; ?>">Click on <?php echo $vendors['name']; ?> profile</a>
+        </div>
+        <div id="vendorImage">
+          <img src="<?php echo $vendors['photo']; ?>" alt="<?php echo $vendors['name']; ?>">
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php endwhile; ?>
+<?php endif; ?>
