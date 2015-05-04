@@ -54,7 +54,6 @@ $vendor = new vendor();
 // include header, page and footer
 
 include($basedir . "/template/header.php");
-include($basedir . "/template/nav.php");
 include($PHPPage);
 include($basedir . "/template/footer.php");
 
