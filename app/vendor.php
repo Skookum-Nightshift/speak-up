@@ -44,10 +44,24 @@ class vendor extends main
 		return true;
 	}
 
+	// publisherId int
+	// limit int default = 3
+	public function getAllZines ($publisherId, $limit = 3) 
+	{
+		$allZines = $this->mysql->query("SELECT * FROM `zine` WHERE `publisher_id` = '" . $this->mysql->real_escape_string($publisherId) . "' ORDER BY RAND() LIMIT " . $this->mysql->real_escape_string($limit) . ";");
+		
+		if ($allZines->num_rows <= 0)
+		{
+			return false;
+		} else {
+			return $allZines;
+		}
+	}
+
 	// limit int default = 3
 	public function getAllVendors ($limit = 3)
 	{
-		$allvendors = $this->mysql->query("SELECT * FROM vendor ORDER BY RAND() LIMIT " . $this->mysql->real_escape_string($limit) . ";");
+		$allvendors = $this->mysql->query("SELECT * FROM `vendor` ORDER BY RAND() LIMIT " . $this->mysql->real_escape_string($limit) . ";");
 
 		if ($allvendors->num_rows <= 0)
 		{
@@ -63,9 +77,9 @@ class vendor extends main
 	public function getVendor ($id, $url)
 	{
 		if (($id === null || $id === '') && is_string($url)) {
-			$theVendor = $this->mysql->query("SELECT * FROM vendor WHERE url = '" . $this->mysql->real_escape_string($url) . "' LIMIT 1;");
+			$theVendor = $this->mysql->query("SELECT * FROM `vendor` WHERE `url` = '" . $this->mysql->real_escape_string($url) . "' LIMIT 1;");
 		} elseif (is_int($id)) {
-			$theVendor = $this->mysql->query("SELECT * FROM vendor WHERE id = '" . $this->mysql->real_escape_string($id) . "' LIMIT 1;");
+			$theVendor = $this->mysql->query("SELECT * FROM `vendor` WHERE `id` = '" . $this->mysql->real_escape_string($id) . "' LIMIT 1;");
 		} else {
 			return false;
 		}
@@ -81,7 +95,7 @@ class vendor extends main
 	public function getPublisher ($id)
 	{
 		if (is_int($id)) {
-			$thePublisher = $this->mysql->query("SELECT * FROM publisher WHERE id = '" . $this->mysql->real_escape_string($id) . "' LIMIT 1;");
+			$thePublisher = $this->mysql->query("SELECT * FROM `publisher` WHERE id = '" . $this->mysql->real_escape_string($id) . "' LIMIT 1;");
 		} else {
 			return false;
 		}
