@@ -5,7 +5,7 @@
     <div class="row" style="padding: 10px 0px;">
       <div class="col-md-3 col-sm-4 col-xs-6">
         <div id="buyImage center">
-          <img src="<?php echo $getVendor['photo']; ?>" style="width:100%" class="center-block img-responsive" />
+          <img src="<?php echo $getVendor['photo']; ?>" style="width:100%" class="img-thumbnail center-block img-responsive" />
         </div>
         <h3 class="text-center">
           You are supporting <br/> <a href="/profile/<?php echo $getVendor['url']; ?>"><?php echo $getVendor['name']; ?></a>
@@ -16,7 +16,7 @@
         <?php while ($zines = $allZines->fetch_assoc()): ?>
         <div class="col-md-3 col-sm-4 col-xs-6 text-center" id="buy">
           <div id="buyImage">
-            <img src="<?php echo $zines['image']; ?>" style="width:90%;" class="center-block img-responsive" />
+            <img src="<?php echo $zines['image']; ?>" style="width:90%;" class="img-thumbnail center-block img-responsive" />
           </div>
           <div id="buyName">
             <?php echo $zines['name']; ?>
@@ -29,6 +29,12 @@
       <?php endif; ?>
     </div>
   <?php else: ?>
-    <a href="/vendor">Go to vendors page to support a vendor before buying</a>
+    <div class="row" style="padding: 10px 0px;">
+      <div class="col-md-12 text-center" id="buy">
+        <h2>
+          <a href="/vendor">Go to vendors page to support a vendor before buying</a>
+        </h2>
+      </div>
+    </div>
   <?php endif; ?>
 </div>

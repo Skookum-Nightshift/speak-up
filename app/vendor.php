@@ -49,7 +49,7 @@ class vendor extends main
 	public function getAllZines ($publisherId, $limit = 3) 
 	{
 		$allZines = $this->mysql->query("SELECT * FROM `zine` WHERE `publisher_id` = '" . $this->mysql->real_escape_string($publisherId) . "' ORDER BY RAND() LIMIT " . $this->mysql->real_escape_string($limit) . ";");
-		
+
 		if ($allZines->num_rows <= 0)
 		{
 			return false;
@@ -89,22 +89,6 @@ class vendor extends main
 			return false;
 		} else {
 			return $theVendor->fetch_assoc();
-		}
-	}
-
-	public function getPublisher ($id)
-	{
-		if (is_int($id)) {
-			$thePublisher = $this->mysql->query("SELECT * FROM `publisher` WHERE id = '" . $this->mysql->real_escape_string($id) . "' LIMIT 1;");
-		} else {
-			return false;
-		}
-
-		if ($thePublisher->num_rows <= 0)
-		{
-			return false;
-		} else {
-			return $thePublisher->fetch_assoc();
 		}
 	}
 }

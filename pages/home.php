@@ -21,7 +21,7 @@
 
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
-        <img src="../images/logo.png" class="img-responsive center-block">
+        <img src="<?php echo $thePublisher['logo']; ?>" alt="<?php echo $thePublisher['name']; ?>" class="img-responsive center-block">
       </div>
     </div>
 

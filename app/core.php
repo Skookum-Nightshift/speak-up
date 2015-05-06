@@ -49,9 +49,13 @@ require($basedir . "/app/password.php");
 require($basedir . "/app/main.php");
 $main = new main();
 
+require($basedir . "/app/publisher.php");
+$publisher = new publisher();
+
 require($basedir . "/app/vendor.php");
 $vendor = new vendor();
 
+$thePublisher = $publisher->getPublisherByCookie();
 // include header, page and footer
 
 include($basedir . "/template/header.php");

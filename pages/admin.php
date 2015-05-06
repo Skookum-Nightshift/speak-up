@@ -1,3 +1,8 @@
+<?php
+/*
+  Developer: Joshua Pack
+*/
+?>
 <?php $showLoginForm = true; ?>
 <?php /* ############ Check if logged in ############ */ ?>
 <?php 
