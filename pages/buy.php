@@ -3,9 +3,9 @@
   <?php if ($vendorBuyingFrom <> ''): ?>
     <?php $getVendor = $vendor->getVendor(null, $vendorBuyingFrom); ?>
     <div class="row" style="padding: 10px 0px;">
-      <div class="col-md-3">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <div id="buyImage center">
-          <img src="<?php echo $getVendor['photo']; ?>" style="max-width:100px;width:100%" class="center-block img-responsive" />
+          <img src="<?php echo $getVendor['photo']; ?>" style="width:100%" class="center-block img-responsive" />
         </div>
         <h3 class="text-center">
           You are supporting <br/> <a href="/profile/<?php echo $getVendor['url']; ?>"><?php echo $getVendor['name']; ?></a>
@@ -14,9 +14,9 @@
       <?php $allZines = $vendor->getAllZines($getVendor['publisher_id'], 3); ?>
       <?php if ($allZines): ?>
         <?php while ($zines = $allZines->fetch_assoc()): ?>
-        <div class="col-md-3 text-center" id="buy">
+        <div class="col-md-3 col-sm-4 col-xs-6 text-center" id="buy">
           <div id="buyImage">
-            <img src="<?php echo $zines['image']; ?>" style="width:70%;" class="center-block img-responsive" />
+            <img src="<?php echo $zines['image']; ?>" style="width:90%;" class="center-block img-responsive" />
           </div>
           <div id="buyName">
             <?php echo $zines['name']; ?>
