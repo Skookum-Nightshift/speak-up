@@ -5,6 +5,7 @@
 	Permission Granted by owner.
 	Joshua Pack
 */
+session_start();
 
 // Get URI
 $uri = preg_replace("/[^a-zA-Z0-9-\s\/]/", "", urldecode($_SERVER['REQUEST_URI']));
