@@ -3,8 +3,18 @@
   <?php if ($vendorBuyingFrom <> ''): ?>
     <?php $getVendor = $vendor->getVendor(null, $vendorBuyingFrom); ?>
     <div class="row">
-      You are supporting <?php echo $getVendor['name']; ?>
-      <div class="center-block" id="buy">
+      <div class="col-md-12">
+        <h3 class="text-center">
+          You are supporting <?php echo $getVendor['name']; ?>
+        </h3>
+      </div>
+      <div class="col-md-12">
+        <h3 class="text-center">
+          You are supporting <?php echo $getVendor['name']; ?>
+        </h3>
+      </div>
+
+      <div class="col-md-12" id="buy">
         <div id="buyImage">
           Default Zine
         </div>

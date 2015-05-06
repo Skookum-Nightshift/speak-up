@@ -1,22 +1,22 @@
 <div id="bio">
+  <div id="profile" class="row" >
+    <?php $profile = $vendor->getVendor(null, $uri[2]); ?>
+    <?php if ($profile): ?>
+      <?php $vendor->setVendorCookie($uri[2]); ?>
 
-  <?php $profile = $vendor->getVendor(null, $uri[2]); ?>
-  <?php if ($profile): ?>
-    <?php $vendor->setVendorCookie($uri[2]); ?>
-    <div id="profile" class="row" >
       <div id="profileImage" class="col-md-2 col-md-offset-2 col-sm-2">
-        <img src="<?php echo $profile['photo']; ?>" alt="<?php echo $profile['name']; ?>">
+        <img class="img-responsive" src="<?php echo $profile['photo']; ?>" alt="<?php echo $profile['name']; ?>">
       </div>
       <div id="profileName" class="col-md-8 col-sm-10">
-        <h3 class="pull-left">
+        <h3>
           <?php echo $profile['name']; ?>
         </h3>
-        <p class="pull-left">
+        <p>
           <?php echo $profile['description']; ?>
         </p>
       </div>
-    </div>
-  <?php endif; ?>
+    <?php endif; ?>
+  </div>
 
   <div id="nav">
     <div class="row">
