@@ -10,7 +10,7 @@
             <h3><?php echo $thePublisher['name']; ?></h3>
           </div>
           <div id="zineInfo">
-            <?php echo $thePublisher['description']; ?> <a href="<?php echo $thePublisher['url']; ?>">Learn More !</a>
+            <?php echo $thePublisher['description']; ?> <a href="<?php echo $thePublisher['url']; ?>" target="_blank">Learn More !</a>
           </div>
 
         </div>

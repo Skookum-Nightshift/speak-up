@@ -14,7 +14,7 @@
         </div>
         <div id="publisherDesc" class="text-left">
           <p>
-            <?php echo $publishers['description']; ?> <a href="<?php echo $publishers['url']; ?>">Learn More !</a>
+            <?php echo $publishers['description']; ?> <a href="<?php echo $publishers['url']; ?>" target="_blank">Learn More !</a>
           </p>
         </div>
       </div>
