@@ -1,5 +1,6 @@
 <script type="text/javascript">
   var JSONmap = <?php echo json_encode($vendor->getVendorLocations($thePublisher['id'])); ?>;
+  console.log(JSONmap);
 </script>
 <div id="home" class="container-fluid">
 
