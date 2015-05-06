@@ -1,24 +1,48 @@
+<?php $showLoginForm = true; ?>
+<!-- if ($uri[1] == "") {
+  $PHPPage = $basedir . "/pages/home.php";
+  $pageTitle = "HomePage";
+} elseif(!file_exists($PHPPage) || $uri[1] == '404') {
+  header("HTTP/1.0 404 Not Found");
+  $PHPPage = $basedir . "/pages/404.php";
+  $pageTitle = "404 Error Page";
+} -->
 <?php if ($uri[2] == 'login'): ?>
   <?php if ($_POST['login']): ?>
+    <?php /*
+    ######################################################
+    Login
+    ######################################################
+    */ ?>
+    <?php if ($main->loginUser($_POST['email'], $_POST['password'])): ?>
+      <?php /* ############ Login Successfully    ############ */ ?>
+      <?php /* ############ Redirect to dashboard ############ */ ?>
+      <?php include($basedir . "/pages/admin/dashboard.php"); ?>
+      <?php $showLoginForm = false; ?>
+    <?php else: ?>
+      <?php /* ############ Login Failed ############ */ ?>
+      <center>
+        <h2>You may already exist in our database.</h2>
+      </center>
+    <?php endif; ?>
   <?php endif; ?>
   <?php if ($_POST['create']): ?>
-    <?php echo '<pre>' . print_r($_POST, true) . '</pre>'; ?>
+    <?php /*
+    ######################################################
+    Create Account
+    ######################################################
+    */ ?>
+    <?php if ($main->setUser($_POST['email'], $_POST['password'])): ?>
+      <?php /* ############ Registered Successfully ############ */ ?>
+      <center>
+        <h2>You have been registered</h2>
+      </center>
+    <?php else: ?>
+      <?php /* ############ Registered Failed ############ */ ?>
+      <center>
+        <h2>You may already exist in our database.</h2>
+      </center>
+    <?php endif; ?>
   <?php endif; ?>
 <?php endif; ?>
-
-<div id="adminform">
-  <form action="/admin/login" method="POST" id="login">
-    <div id="email">
-      Email:<br />
-      <input type="text" name="email">
-    </div>
-    <div id="password">
-      Password:<br />
-      <input type="password" name="password">
-    </div>
-    <input type="submit" name="login" value="Log in"> <input type="submit" name="create" value="Create Account">
-  </form>
-  <div id='forgotpassword'>
-    <a href="/forgot">Forgot Password?</a>
-  </div>
-</div>
+<?php if ($showLoginForm) include($basedir . "/pages/admin/login.php"); ?>
