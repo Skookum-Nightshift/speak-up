@@ -1,3 +1,6 @@
+<script type="text/javascript">
+  var JSONmap = <?php echo json_encode($vendor->getVendorLocations($thePublisher['id'])); ?>;
+</script>
 <div id="home" class="container-fluid">
 
   <!--
@@ -40,8 +43,7 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
         <div id="mapLayout" style="height:auto;padding:10px 0px;">
-
-          <!-- Placeholder for map -->
+          <!-- Placeholder for map json_encode  -->
           <img src="http://placehold.it/600x400" class="img-responsive center-block">
 
         </div>

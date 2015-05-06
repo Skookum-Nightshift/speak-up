@@ -59,9 +59,9 @@ class vendor extends main
 	}
 
 	// limit int default = 3
-	public function getAllVendors ($limit = 3)
+	public function getAllVendors ($limit = 3, $publisherId = 1)
 	{
-		$allvendors = $this->mysql->query("SELECT * FROM `vendor` ORDER BY RAND() LIMIT " . $this->mysql->real_escape_string($limit) . ";");
+		$allvendors = $this->mysql->query("SELECT * FROM `vendor` WHERE `publisher_id` = '" . $this->mysql->real_escape_string($publisherId) . "' ORDER BY RAND() LIMIT " . $this->mysql->real_escape_string($limit) . ";");
 
 		if ($allvendors->num_rows <= 0)
 		{
@@ -89,6 +89,31 @@ class vendor extends main
 			return false;
 		} else {
 			return $theVendor->fetch_assoc();
+		}
+	}
+
+	public function getVendorLocations ($publisherId) {
+		if ($allVendors = $this->getAllVendors(25, $publisherId))
+		{
+			$vendorLocationArray = array();
+			$i = 0;
+			while ($vendor = $allVendors->fetch_assoc()) {
+				$allLocations = $this->mysql->query("SELECT * FROM `locations` WHERE `vendor_id` = '" . $this->mysql->real_escape_string($vendor['id']) . "';");
+				if ($allLocations->num_rows > 0) {
+					$vendorLocationArray[$i]['vendor'] = $vendor;
+					while ($location = $allLocations->fetch_assoc()) {
+						$vendorLocationArray[$i]['location'][] = $location;
+					}
+					$i++;
+				}
+			}
+			if (!empty($vendorLocationArray)) {
+				return $vendorLocationArray;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
 		}
 	}
 }
