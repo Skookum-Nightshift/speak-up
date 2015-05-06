@@ -1,6 +1,3 @@
-<div class="row">
-</div>
-
 <div id="home" class="container-fluid">
 
   <!--
@@ -44,23 +41,21 @@
 
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <div id="mapLayout">
+        <div id="mapLayout" style="height:auto;padding:10px 0px;">
 
           <!-- Placeholder for map -->
-          <img src="http://placehold.it/100x100" class="img-responsive center-block">
+          <img src="http://placehold.it/600x400" class="img-responsive center-block">
 
         </div>
       </div>
     </div>
   </div>
 
-  <div id="nav">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <a href="/buy">
-          <button class="center-block zine-button"> Buy Zine Now! </button>
-        </a>
-      </div>
+  <div id="nav" class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <a href="/buy">
+        <button class="center-block zine-button"> Buy Zine Now! </button>
+      </a>
     </div>
   </div>
 
