@@ -1,0 +1,85 @@
+/* white text */
+.hdrtxtwht {
+  color: #fff;
+}
+
+p {
+  margin: 0 0 0px;
+}
+
+.navbar {
+  min-height: 20px;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  background-color: #2481ff;
+}
+
+.topper {
+  padding: 10px 0 10px 0;
+}
+
+.topper2 {
+  padding-top: 8px;
+}
+
+.moodimg {
+  position: absolute;
+  top: 0;
+}
+
+ .transparent {
+   background: rgba(0,0,0,0.6);
+}
+
+.floatcap {
+  margin-top: 10%;
+  margin-left: 10%;
+  position: relative;
+}
+
+/* Parallax Magic */
+.bg {
+  background: url('../images/balloons.jpg') no-repeat center center;
+  position: fixed;
+  width: 100%;
+  height: 400px; /*same height as jumbotron */
+  top:0;
+  left:0;
+  z-index: -1;
+}
+
+.jumbotronallax {
+  height: 400px;
+  /*color: white;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;*/
+}
+
+
+/* Imitate spacing of form label 
+.fauxlabel {
+  margin-bottom: -10px;
+} */
+
+/* Custom page header 
+.header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+}*/
+
+
+/* Make the masthead heading the same height as the navigation 
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+} */
+
+/* Custom page footer 
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+} */
+
