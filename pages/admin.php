@@ -2,7 +2,7 @@
 <?php /* ############ Check if logged in ############ */ ?>
 <?php 
   if ($main->getUserBySession()) {
-    if ($uri[1] == "admin") {
+    if ($uri[1] == "admin" && $uri[2] != 'login') {
       $PHPPage = $basedir . "/pages/admin/" . strtolower($uri[2]) . ".php";
       if ($uri[2] == "") {
         $PHPPage = $basedir . "/pages/admin/dashboard.php";
