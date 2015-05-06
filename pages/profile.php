@@ -1,4 +1,4 @@
-<div id="bio">
+<div id="bio" class="container-fluid">
   <div id="profile" class="row" >
     <?php $profile = $vendor->getVendor(null, $uri[2]); ?>
     <?php if ($profile): ?>
@@ -18,14 +18,14 @@
     <?php endif; ?>
   </div>
 
-  <div id="nav">
-    <div class="row">
-      <div class="col-md-4 col-md-offset-4">
-        <a href="/buy">
-          <button class="center-block zine-button"> Buy Zine Now! </button>
-        </a>
-      </div>
+</div>
+
+<div id="nav" class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <a href="/buy">
+        <button class="center-block zine-button"> Buy Zine Now! </button>
+      </a>
     </div>
   </div>
-
 </div>

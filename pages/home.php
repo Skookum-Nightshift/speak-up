@@ -3,13 +3,11 @@
   <!--
     Set Background maybe?
   -->
-  <div id="company">
-    <div class="row">
-      <div class="col-md-12">
-        <h3 class="text-center">
-          A hand up to a neighbor in need.
-        </h3>
-      </div>
+  <div id="company" class="row">
+    <div class="col-md-12">
+      <h3 class="text-center">
+        A hand up to a neighbor in need.
+      </h3>
     </div>
   </div>
 

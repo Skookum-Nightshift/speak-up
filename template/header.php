@@ -24,7 +24,7 @@
         <div class="container topper">
           <div id="nav">
             <div class="col-md-2">
-              <img src="/images/rightstreet-logo-light-01-200x52.png" class="img-responsive">
+              <a href="/"><img src="/images/rightstreet-logo-light-01-200x52.png" class="img-responsive"></a>
             </div>
 
             <div class="col-md-6">
