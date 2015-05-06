@@ -4,3 +4,23 @@
 	margin-right: auto;
 	width: 170px;
 }
+#company {
+	border-bottom: 2px red solid;
+	background-image: url("http://placehold.it/1000x200");
+}
+#mapLayout {
+	height: 300px
+}
+#nav {
+	background: black;
+}
+#zineImage {
+	height: 100px;
+}
+.row {
+	padding: 10 10 10 10;
+}
+.zine-button {
+	border-radius: 0px;
+	/* Add red color and white text*/
+}
