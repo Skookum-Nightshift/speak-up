@@ -22,7 +22,21 @@
             <?php echo $zines['name']; ?>
           </div>
           <div class="center-block" id="buyButtons">
-            <button onclick="window.location.href='/buy/zine/<?php echo $zines['id']; ?>'">Buy This Zine</button>
+            <form action="/checkout" method="POST">
+              <input type="hidden" name="zine" value="<?php echo $zines['id']; ?>" />
+              <script
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                data-key="pk_test_nk1moKc5WNItJFJtCspVWY01"
+                data-amount="<?php echo $zines['price']; ?>"
+                data-name="<?php echo $zines['name']; ?>"
+                data-label="Buy This Zine"
+                data-currency="USD"
+                data-description="<?php echo $zines['name']; ?>"
+                data-image="<?php echo $zines['image']; ?>">
+              </script>
+              <!-- pk_test_nk1moKc5WNItJFJtCspVWY01 pk_live_FbfHdbrF5DzB3QguXHYEWTsT -->
+            </form>
+            <!-- <button onclick="window.location.href='/buy/zine/<?php echo $zines['id']; ?>'">Buy This Zine</button> -->
           </div>
         </div>
         <?php endwhile; ?>

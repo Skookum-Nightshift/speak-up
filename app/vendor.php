@@ -58,6 +58,19 @@ class vendor extends main
 		}
 	}
 
+	// zineId int
+	public function getZine ($zineId) 
+	{
+		$theZine = $this->mysql->query("SELECT * FROM `zine` WHERE `id` = '" . $this->mysql->real_escape_string($zineId) . "' LIMIT 1;");
+
+		if ($theZine->num_rows <= 0)
+		{
+			return false;
+		} else {
+			return $theZine->fetch_assoc();
+		}
+	}
+
 	// limit int default = 3
 	public function getAllVendors ($limit = 3, $publisherId = 1)
 	{
