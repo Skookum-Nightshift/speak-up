@@ -6,11 +6,14 @@
 class main
 {
 	private $mysql;
+	public $user;
+	public $error;
 
 	public function __construct() 
 	{
 		// make from global MySQL
 		$this->mysql = $GLOBALS['mysql'];
+		$this->error = '';
 	}
 
 	// returns an array of scripts
@@ -88,7 +91,22 @@ class main
 
 	public function setUser ($email, $password)
 	{
-		//INSERT INTO `user` (`email`, `password`) VALUES ('$email', '$password');
+		$password = $this->passwordEncrypt($password);
+		$userExists = false;
+		$theUser = $this->mysql->query("SELECT * FROM `user` WHERE `email` = '" . $email . "' LIMIT 1;");
+		if ($theUser->num_rows > 0) $userExists = true;
+
+		if (!$userExists) {
+			$this->mysql->query("INSERT INTO `user` (`email`, `password`) VALUES ('".$email."', '".$password."')");
+			return true;
+		} else {
+			$this->error = 'Email address already registered';
+			return false;
+		}
+	}
+
+	public function loginUser ($email, $password)
+	{
 		return true;
 	}
 }
