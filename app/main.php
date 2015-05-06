@@ -84,20 +84,28 @@ class main
 		return password_verify($password, $hash);
 	}
 
-	public function getUser ($email, $password)
+	public function getUserBySession ()
 	{
-		return true;
+		if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
+			$email = $this->mysql->real_escape_string($_SESSION['email']);
+			$theUser = $this->mysql->query("SELECT * FROM `user` WHERE `email` = '" . $email . "' LIMIT 1;");
+			if ($theUser->num_rows > 0) {
+				$theUser = $theUser->fetch_assoc();
+			}
+		} else {
+			return false;
+		}
 	}
 
 	public function setUser ($email, $password)
 	{
 		$password = $this->passwordEncrypt($password);
 		$userExists = false;
-		$theUser = $this->mysql->query("SELECT * FROM `user` WHERE `email` = '" . $email . "' LIMIT 1;");
+		$theUser = $this->mysql->query("SELECT * FROM `user` WHERE `email` = '" . $this->mysql->real_escape_string($email) . "' LIMIT 1;");
 		if ($theUser->num_rows > 0) $userExists = true;
 
 		if (!$userExists) {
-			$this->mysql->query("INSERT INTO `user` (`email`, `password`) VALUES ('".$email."', '".$password."')");
+			$this->mysql->query("INSERT INTO `user` (`email`, `password`) VALUES ('" . $this->mysql->real_escape_string($email) . "', '" . $this->mysql->real_escape_string($password) . "')");
 			return true;
 		} else {
 			$this->error = 'Email address already registered';

@@ -1,4 +1,5 @@
 <?php $showLoginForm = true; ?>
+<?php /* ############ Check if logged in ############ */ ?>
 <!-- if ($uri[1] == "") {
   $PHPPage = $basedir . "/pages/home.php";
   $pageTitle = "HomePage";
