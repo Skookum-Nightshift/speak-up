@@ -1,13 +1,22 @@
 <?php $showLoginForm = true; ?>
 <?php /* ############ Check if logged in ############ */ ?>
-<!-- if ($uri[1] == "") {
-  $PHPPage = $basedir . "/pages/home.php";
-  $pageTitle = "HomePage";
-} elseif(!file_exists($PHPPage) || $uri[1] == '404') {
-  header("HTTP/1.0 404 Not Found");
-  $PHPPage = $basedir . "/pages/404.php";
-  $pageTitle = "404 Error Page";
-} -->
+<?php 
+  if ($main->getUserBySession()) {
+    if ($uri[1] == "admin") {
+      $PHPPage = $basedir . "/pages/admin/" . strtolower($uri[2]) . ".php";
+      if ($uri[2] == "") {
+        $PHPPage = $basedir . "/pages/admin/dashboard.php";
+        $pageTitle = "Dashboard";
+      } elseif(!file_exists($PHPPage) || $uri[1] == '404') {
+        header("HTTP/1.0 404 Not Found");
+        $PHPPage = $basedir . "/pages/404.php";
+        $pageTitle = "404 Error Page";
+      }
+      include($PHPPage);
+    }
+    $showLoginForm = false;
+  }
+?>
 <?php if ($uri[2] == 'login'): ?>
   <?php if ($_POST['login']): ?>
     <?php /*
@@ -23,7 +32,7 @@
     <?php else: ?>
       <?php /* ############ Login Failed ############ */ ?>
       <center>
-        <h2>You may already exist in our database.</h2>
+        <h2>Failed Login.</h2>
       </center>
     <?php endif; ?>
   <?php endif; ?>

@@ -84,6 +84,8 @@ class main
 		return password_verify($password, $hash);
 	}
 
+	// WARNING - this needs to be looked into for timing attackes
+	// http://stackoverflow.com/questions/5211132/what-is-the-best-way-to-compare-hashed-strings-php
 	public function getUserBySession ()
 	{
 		if (isset($_SESSION['email']) && isset($_SESSION['pass'])) {
@@ -91,8 +93,38 @@ class main
 			$theUser = $this->mysql->query("SELECT * FROM `user` WHERE `email` = '" . $email . "' LIMIT 1;");
 			if ($theUser->num_rows > 0) {
 				$theUser = $theUser->fetch_assoc();
+				if ($_SESSION['pass'] === $theUser['password']) {
+					return true;
+				} else {
+					return false;
+				}
+			} else {
+				return false;
 			}
 		} else {
+			return false;
+		}
+	}
+
+	// WARNING - this needs to be looked into for timing attackes
+	// http://stackoverflow.com/questions/5211132/what-is-the-best-way-to-compare-hashed-strings-php
+	public function loginUser ($email, $password)
+	{
+		$theUser = $this->mysql->query("SELECT * FROM `user` WHERE `email` = '" . $this->mysql->real_escape_string($email) . "' LIMIT 1;");
+		if ($theUser->num_rows > 0) {
+			$theUser = $theUser->fetch_assoc();
+			if ($this->passwordCheck($password, $theUser['password'])) {
+				$password = $this->passwordEncrypt($password);
+				$_SESSION['email'] = $email;
+				$_SESSION['pass'] = $theUser['password'];
+				$this->error = 'Passwords Incorrect';
+				return true;
+			} else {
+				$this->error = 'Passwords Incorrect';
+				return false;
+			}
+		} else {
+			$this->error = 'Email Doesn\'t Exist';
 			return false;
 		}
 	}
@@ -111,10 +143,5 @@ class main
 			$this->error = 'Email address already registered';
 			return false;
 		}
-	}
-
-	public function loginUser ($email, $password)
-	{
-		return true;
 	}
 }
