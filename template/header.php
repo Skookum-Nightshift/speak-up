@@ -11,9 +11,9 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_5JuG3IwXN7vH_htjEhoAbTjc-9ia3xA"></script>
     <script src="https://maps.gstatic.com/maps-api-v3/api/js/20/10/main.js"></script>
 
-    <link href="../css/rightstreet.css" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/styles.css" rel="stylesheet">
+    <link href="/css/rightstreet.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
   </head>
   <body>
 
@@ -24,7 +24,7 @@
         <div class="container topper">
           <div id="nav">
             <div class="col-md-2">
-              <img src="../images/rightstreet-logo-light-01-200x52.png" class="img-responsive">
+              <img src="/images/rightstreet-logo-light-01-200x52.png" class="img-responsive">
             </div>
 
             <div class="col-md-6">

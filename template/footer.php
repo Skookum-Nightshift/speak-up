@@ -1,7 +1,7 @@
     <div class="row">
       <div class="col-sm-2">
         <div id="zineImage">
-          <img src="../images/logo.png" class="img-responsive pull-right">
+          <img src="/images/logo.png" class="img-responsive pull-right">
         </div>
       </div>
       <div class="col-sm-9">
@@ -30,7 +30,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
   </body>
 </html>
