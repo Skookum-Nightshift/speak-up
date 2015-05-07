@@ -13,11 +13,11 @@
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li<?php if (!isset($uri[2]) || $uri[2] == '' || $uri[2] == 'dashboard') echo ' class="active"'; ?>><a href="/admin/dashboard">Dashboard <span class="glyphicon glyphicon-dashboard"></span></a></li>
-        <li<?php if (isset($uri[2]) && $uri[2] == 'vendors') echo ' class="active"'; ?>><a href="/admin/vendors">Vendors <span class="glyphicon glyphicon-tasks"></span></a></li>
-        <li<?php if (isset($uri[2]) && $uri[2] == 'zines') echo ' class="active"'; ?>><a href="/admin/zines">Zines <span class="glyphicon glyphicon-briefcase"></span></a></li>
-        <li<?php if (isset($uri[2]) && $uri[2] == 'reports' && $uri[3] == 'transactions') echo ' class="active"'; ?>><a href="/admin/reports/transactions">Transactions <span class="glyphicon glyphicon-transfer"></span></a></li>
-        <li<?php if (isset($uri[2]) && $uri[2] == 'settings') echo ' class="active"'; ?>><a href="/admin/settings">Settings <span class="glyphicon glyphicon-cog"></span></a></li>
+        <li<?php if (!isset($uri[2]) || $uri[2] == '' || $uri[2] == 'dashboard') echo ' class="active"'; ?>><a href="/admin/dashboard"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a></li>
+        <li<?php if (isset($uri[2]) && $uri[2] == 'vendors') echo ' class="active"'; ?>><a href="/admin/vendors"><span class="glyphicon glyphicon-tasks"></span> Vendors</a></li>
+        <li<?php if (isset($uri[2]) && $uri[2] == 'zines') echo ' class="active"'; ?>><a href="/admin/zines"><span class="glyphicon glyphicon-briefcase"></span> Zines</a></li>
+        <li<?php if (isset($uri[2]) && $uri[2] == 'reports' && $uri[3] == 'transactions') echo ' class="active"'; ?>><a href="/admin/reports/transactions"><span class="glyphicon glyphicon-transfer"></span> Transactions</a></li>
+        <li<?php if (isset($uri[2]) && $uri[2] == 'settings') echo ' class="active"'; ?>><a href="/admin/settings"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -30,7 +30,7 @@
             <li<?php if (isset($uri[2]) && $uri[2] == 'reports' && $uri[3] == 'settings') echo ' class="active"'; ?>><a href="/admin/reports/settings"><span class="glyphicon glyphicon-wrench"></span> Report Settings</a></li>
           </ul>
         </li>
-        <li<?php if (isset($uri[2]) && $uri[2] == 'logout') echo ' class="active"'; ?>><a href="/admin/logout">Logout <span class="glyphicon glyphicon-off"></span></a></li>
+        <li<?php if (isset($uri[2]) && $uri[2] == 'logout') echo ' class="active"'; ?>><a href="/admin/logout"><span class="glyphicon glyphicon-off"></span> Logout</a></li>
       </ul>
     </div>
 
