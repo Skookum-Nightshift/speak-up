@@ -15,6 +15,13 @@ p {
   background-color: #2481ff;
 }
 
+.nav-pills>li>a {
+  color: #fff;
+}
+.nav-pills>li>a:focus, .nav-pills>li>a:hover {
+  color: #000;
+}
+
 .topper {
   padding: 10px 0 10px 0;
 }

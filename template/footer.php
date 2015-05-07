@@ -1,3 +1,10 @@
+<div class="container-fluid">
+  <div class="row panel">
+    <div class="col-xs-12 panel-body">
+    </div>
+  </div>
+</div>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-2">

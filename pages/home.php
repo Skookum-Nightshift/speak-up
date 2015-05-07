@@ -54,21 +54,19 @@ $(document).ready(function() {
     </div>
 
     <div class="row">
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-10 col-md-offset-1">
         <div id="mapLayout" style="height:auto;padding:10px 0px;">
           <!-- Placeholder for map json_encode  -->
-          <img src="http://placehold.it/600x400" class="img-responsive center-block">
+          <img src="/images/vendormap.jpg" class="img-responsive center-block">
 
         </div>
       </div>
     </div>
   </div>
 
-  <div id="nav" class="row">
+  <div class="row">
     <div class="col-md-4 col-md-offset-4">
-      <a href="/buy">
-        <button class="center-block zine-button"> Buy Zine Now! </button>
-      </a>
+      <a href="/buy"><button type="button" class="btn btn-primary btn-lg btn-block">Buy A Zine Now!</button></a>
     </div>
   </div>
 
