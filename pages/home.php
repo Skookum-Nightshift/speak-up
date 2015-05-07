@@ -2,18 +2,32 @@
   var JSONmap = <?php echo json_encode($vendor->getVendorLocations($thePublisher['id'])); ?>;
   console.log(JSONmap);
 </script>
-<div id="home" class="container-fluid">
 
-  <!--
-    Set Background maybe?
-  -->
-  <div id="company" class="row">
-    <div class="col-md-12">
-      <h3 class="text-center">
-        A hand up to a neighbor in need.
-      </h3>
-    </div>
-  </div>
+
+<div class="bg"></div>
+
+<div class="floatcap">
+  <h2 class="hdrtxtwht">A hand up to a neighbor in need</h1>
+</div>
+
+<div style="clear:both"></div>
+
+<!-- JavaScript jQuery code from Bootply.com editor  -->
+<script type='text/javascript'>
+$(document).ready(function() {
+  var jumboHeight = $('.jumbotronallax').outerHeight();
+  function parallax(){
+      var scrolled = $(window).scrollTop();
+      $('.bg').css('height', (jumboHeight-scrolled) + 'px');
+  }
+
+  $(window).scroll(function(e){
+      parallax();
+  });
+
+});
+</script>
+<div id="home" class="container-fluid">
 
   <div id="map">
     <!-- WHoever is on the map-->
