@@ -94,3 +94,5 @@ $(document).ready(function() {
   </div>
 
 </div>
+
+    <script src="/js/vendorMap.js"></script>

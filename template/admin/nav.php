@@ -17,7 +17,7 @@
         <li<?php if (isset($uri[2]) && $uri[2] == 'vendors') echo ' class="active"'; ?>><a href="/admin/vendors">Vendors <span class="glyphicon glyphicon-tasks"></span></a></li>
         <li<?php if (isset($uri[2]) && $uri[2] == 'zines') echo ' class="active"'; ?>><a href="/admin/zines">Zines <span class="glyphicon glyphicon-briefcase"></span></a></li>
         <li<?php if (isset($uri[2]) && $uri[2] == 'reports' && $uri[3] == 'transactions') echo ' class="active"'; ?>><a href="/admin/reports/transactions">Transactions <span class="glyphicon glyphicon-transfer"></span></a></li>
-        <li<?php if (isset($uri[2]) && $uri[2] == 'reports' && $uri[3] == 'settings') echo ' class="active"'; ?>><a href="/admin/settings">Settings <span class="glyphicon glyphicon-cog"></span></a></li>
+        <li<?php if (isset($uri[2]) && $uri[2] == 'settings') echo ' class="active"'; ?>><a href="/admin/settings">Settings <span class="glyphicon glyphicon-cog"></span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
