@@ -5,7 +5,7 @@
     <div class="row" style="padding: 10px 0px;">
       <div class="col-md-3 col-sm-4 col-xs-6">
         <div id="buyImage center">
-          <img src="<?php echo $getVendor['photo']; ?>" style="width:100%" class="img-thumbnail center-block img-responsive" />
+          <img src="<?php echo $getVendor['photo']; ?>" style="width:100%" class="img-circle center-block img-responsive" />
         </div>
         <h3 class="text-center">
           You are supporting <br/> <a href="/profile/<?php echo $getVendor['url']; ?>"><?php echo $getVendor['name']; ?></a>
