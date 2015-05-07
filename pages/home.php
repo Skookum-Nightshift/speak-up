@@ -69,7 +69,7 @@ $(document).ready(function() {
 
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-        <div id="mapLayout" style="height:auto;padding:10px 0px;">
+        <div id="mapLayout" style="padding:10px 0px;">
           <!-- Placeholder for map json_encode  -->
           <img src="/images/vendormap.jpg" class="img-responsive center-block">
 
