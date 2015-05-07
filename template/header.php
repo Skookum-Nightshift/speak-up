@@ -21,12 +21,12 @@
         <div class="container topper">
           <div id="nav">
             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-12">
-              <a href="/"><img src="/images/rightstreet-logo-light-01-200x52.png" class="img-responsive"></a>
+              <a href="/"><img src="/images/rightstreet-logo-light-01-200x52.png" class="img-responsive center-block"></a>
             </div>
 
-            <div class="col-lg-6 col-md-5 col-sm-8 col-xs-12">
+            <div class="col-lg-6 col-md-5 col-sm-8 col-xs-12 center-block">
               <h1 class="sr-only"> RightStreet | Speak Up Magazine </h1>
-              <p class="hdrtxtwht">Street magazines give the disadvantaged an oportunity to earn money.<br><strong>rightstreet</strong> expands that oportunity.<p>
+              <p class="hdrtxtwht text-left">Street magazines give the disadvantaged an oportunity to earn money.<br><strong>rightstreet</strong> expands that oportunity.<p>
             </div>
 
             <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
