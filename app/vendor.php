@@ -14,10 +14,14 @@ class vendor extends main
 		// not sure why i couldn't inherit parent :(
 		$this->mysql = $GLOBALS['mysql'];
 
+		$uri = $GLOBALS['uri'];
+
 		$this->cookieTime = time() + (86400 * 30); // cookieTime defaults to 30 days
 
-		// If cookie exists renew it
-		if (isset($_COOKIE['vendorCookie'])) {
+		if (strtolower($uri[1]) == 'profile') {
+			$profile = $this->getVendor(null, $uri[2]);
+			if ($profile) $this->setVendorCookie($uri[2]);
+		} else if (isset($_COOKIE['vendorCookie'])) {
 			$this->setVendorCookie($_COOKIE['vendorCookie']);
 		}
 	}
