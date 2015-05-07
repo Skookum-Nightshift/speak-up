@@ -1,24 +1,12 @@
-#adminform {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 170px;
-}
-#company {
-	border-bottom: 2px red solid;
-	background-image: url("http://placehold.it/1000x200");
-}
 #mapLayout {
-	height: 300px
+	height: 500px;
+	margin-bottom: 15px;
 }
 #nav {
 	background: black;
 }
 #zineImage {
 	height: 100px;
-}
-.row {
-	padding: 10 10 10 10;
 }
 .zine-button {
 	border-radius: 0px;
