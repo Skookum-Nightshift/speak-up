@@ -6,7 +6,7 @@ function initialize() {
   // Charlotte Center latLng
   var myLatlng = new google.maps.LatLng(35.227087,-80.843127);
   var mapOptions = {
-    zoom: 12,
+    zoom: 15,
     center: myLatlng
   };
 
@@ -23,7 +23,10 @@ function initialize() {
       //JSONmap[i].location[j].id
 
       var contentString = "<h3>" + JSONmap[i].vendor.name + "</h3>" +
-        "<p>" + + "</p>";
+        '<a class="" href="/profile/' + JSONmap[i].vendor.url + '">' +
+        "<img style='height:200px;' class='img-responsive' src='../.." + JSONmap[i].vendor.photo + "'></img>" +
+        "</a>" +
+        "<h4> Time: " + JSONmap[i].location[j].time + "</h4>";
 
       var infowindow = new google.maps.InfoWindow({
           content: contentString
