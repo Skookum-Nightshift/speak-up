@@ -94,6 +94,7 @@ class main
 			if ($theUser->num_rows > 0) {
 				$theUser = $theUser->fetch_assoc();
 				if ($_SESSION['pass'] === $theUser['password']) {
+					$this->user = $theUser;
 					return true;
 				} else {
 					return false;
@@ -117,7 +118,7 @@ class main
 				$password = $this->passwordEncrypt($password);
 				$_SESSION['email'] = $email;
 				$_SESSION['pass'] = $theUser['password'];
-				$this->error = 'Passwords Incorrect';
+				$this->user = $theUser;
 				return true;
 			} else {
 				$this->error = 'Passwords Incorrect';
