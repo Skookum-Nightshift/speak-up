@@ -1,9 +1,9 @@
-<div class="container-fluid">
-  <div class="row panel">
-    <div class="col-xs-12 panel-body">
+    <div class="container-fluid">
+      <div class="row panel">
+        <div class="col-xs-12 panel-body">
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
     <div class="container-fluid">
       <div class="row">
@@ -25,7 +25,13 @@
         </div>
       </div>
     </div>
-
+    
+    <div class="container-fluid">
+      <div class="row panel">
+        <div class="col-xs-12 panel-body">
+        </div>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 
