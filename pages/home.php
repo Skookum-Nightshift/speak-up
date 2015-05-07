@@ -22,8 +22,22 @@ $(document).ready(function() {
   $(window).scroll(function(e){
       parallax();
   });
-
+  changemainimage();
 });
+  function changemainimage() {
+    if ($('.bg').css('background-image').indexOf("balloons") > -1) {
+      $('.bg').fadeOut('fast', function() {
+        $('.bg').css('background-image', 'url(/images/sparklers.jpg)');
+        $('.bg').fadeIn('fast');
+      });
+    } else {
+      $('.bg').fadeOut('fast', function() {
+        $('.bg').css('background-image', 'url(/images/balloons.jpg)');
+        $('.bg').fadeIn('fast');
+      });
+    }
+    setTimeout(function () {changemainimage();}, 10000);
+  }
 </script>
 <div id="home" class="container-fluid">
 
