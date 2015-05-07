@@ -27,7 +27,17 @@ $(document).ready(function() {
   function changemainimage() {
     if ($('.bg').css('background-image').indexOf("balloons") > -1) {
       $('.bg').fadeOut('fast', function() {
-        $('.bg').css('background-image', 'url(/images/sparklers.jpg)');
+        $('.bg').css('background-image', 'url(/images/sparkler-darker-web.jpg)');
+        $('.bg').fadeIn('fast');
+      });
+    } else if ($('.bg').css('background-image').indexOf("sparkler") > -1) {
+      $('.bg').fadeOut('fast', function() {
+        $('.bg').css('background-image', 'url(/images/delicate-darker-web.jpg)');
+        $('.bg').fadeIn('fast');
+      });
+    } else if ($('.bg').css('background-image').indexOf("delicate") > -1) {
+      $('.bg').fadeOut('fast', function() {
+        $('.bg').css('background-image', 'url(/images/map-web.jpg)');
         $('.bg').fadeIn('fast');
       });
     } else {
@@ -36,7 +46,7 @@ $(document).ready(function() {
         $('.bg').fadeIn('fast');
       });
     }
-    setTimeout(function () {changemainimage();}, 10000);
+    setTimeout(function () {changemainimage();}, 15000);
   }
 </script>
 <div id="home" class="container-fluid">
