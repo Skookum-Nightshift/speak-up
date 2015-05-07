@@ -10,8 +10,6 @@
   <h2 class="hdrtxtwht">A hand up to a neighbor in need</h1>
 </div>
 
-<div style="clear:both"></div>
-
 <!-- JavaScript jQuery code from Bootply.com editor  -->
 <script type='text/javascript'>
 $(document).ready(function() {
