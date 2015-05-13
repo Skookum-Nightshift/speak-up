@@ -1,4 +1,4 @@
-<?php $allVendors = $vendor->getAllVendors(3, $thePublisher['id']); ?>
+<?php $allVendors = $vendor->getAllVendors(12, $thePublisher['id']); ?>
 <?php if ($allVendors): ?>
   <div id="vendors" class="container-fluid">
     <div class="row">
